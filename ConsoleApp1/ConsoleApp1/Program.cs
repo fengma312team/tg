@@ -15,7 +15,10 @@ namespace ConsoleApp1
             string a=reptile.GetVerification(b.Value, "d://a.png");
             string userinfo= reptile.Login("GNA119", "aa1234", a,b.Key);
             List<Match> matches= reptile.GetAllHead();
-
+            foreach (var item in matches)
+            {
+                List<Info> infos= reptile.GetInfo(item);
+            }
 
 
         }
