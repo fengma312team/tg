@@ -25,8 +25,15 @@ namespace ConsoleApp1
         /// rest客户端
         /// </summary>
         private RestClient restclient;
+        /// <summary>
+        /// html文档处理
+        /// </summary>
         private HtmlWeb htmlWeb = new HtmlWeb();
-        IList<RestResponseCookie> cookies;
+        /// <summary>
+        /// 登录会话
+        /// </summary>
+        private IList<RestResponseCookie> cookies;
+
         /// <summary>
         /// 初始化
         /// </summary>
@@ -60,7 +67,7 @@ namespace ConsoleApp1
         }
 
         /// <summary>
-        /// 获取验证码 ,注：此方法基本无用，要想提高此方法可用性，干扰线颜色相同，以此来去掉干扰线，再做ocr运行，基本上就可用了。
+        /// 获取验证码 ,注：此方法基本无用，要想提高此方法可用性，干扰线颜色相同，以此来去掉干扰线，再做ocr运行，基本上就可用了。调试时，在登录方法做断点，修改正确的验证证处理
         /// </summary>
         /// <param name="b">验证码图片</param>
         /// <param name="b">验证码保存图片</param>
@@ -81,7 +88,7 @@ namespace ConsoleApp1
         }
 
         /// <summary>
-        /// 登录  /ac_session.php
+        /// 登录  /ac_session.php  验证码现在还未优化，此方法断点修改验证码值再运行后面
         /// </summary>
         /// <param name="name">用户名</param>
         /// <param name="passwd">密码</param>
